@@ -1,7 +1,8 @@
 import styled from 'styled-components/macro';
+import { QUERIES } from '../../constants';
 
 export default styled.button`
-  display: ${(props) => props.display || 'block'};
+  display: ${(props) => props.display || "block"};
   margin: 0;
   padding: 0;
   border: none;
@@ -18,4 +19,6 @@ export default styled.button`
   &:focus:not(:focus-visible) {
     outline: none;
   }
+
+
 `;
