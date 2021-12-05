@@ -1,12 +1,12 @@
-import React from 'react';
-import styled from 'styled-components/macro';
+import React from "react";
+import styled from "styled-components/macro";
 
-import { COLORS, QUERIES, WEIGHTS } from '../../constants';
-import Logo from '../Logo';
-import SuperHeader from '../SuperHeader';
-import MobileMenu from '../MobileMenu';
-import Icon from '../Icon';
-import UnstyledButton from '../UnstyledButton';
+import { COLORS, QUERIES, WEIGHTS } from "../../constants";
+import Logo from "../Logo";
+import SuperHeader from "../SuperHeader";
+import MobileMenu from "../MobileMenu";
+import Icon from "../Icon";
+import UnstyledButton from "../UnstyledButton";
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
@@ -27,20 +27,21 @@ const Header = () => {
           <NavLink href="/sale">Sale</NavLink>
           <NavLink href="/new">New&nbsp;Releases</NavLink>
           <NavLink href="/men">Men</NavLink>
+          <NavLink href="/men">Men</NavLink>
           <NavLink href="/women">Women</NavLink>
           <NavLink href="/kids">Kids</NavLink>
           <NavLink href="/collections">Collections</NavLink>
         </Nav>
         <MobileAction>
           <UnstyledButton>
-              <Icon id={"shopping-bag"}/>
-           </UnstyledButton>
+            <Icon id={"shopping-bag"} />
+          </UnstyledButton>
           <UnstyledButton>
-              <Icon id={"search"}/>
-           </UnstyledButton>
-          <UnstyledButton onClick={()=>setShowMobileMenu(true)} >
-              <Icon id={"menu"}/>
-           </UnstyledButton>
+            <Icon id={"search"} />
+          </UnstyledButton>
+          <UnstyledButton onClick={() => setShowMobileMenu(true)}>
+            <Icon id={"menu"} />
+          </UnstyledButton>
         </MobileAction>
         <Filler />
       </MainHeader>
@@ -56,42 +57,41 @@ const MainHeader = styled.div`
   display: flex;
   align-items: baseline;
   padding: 18px 32px;
-  height: 72px;
   border-bottom: 1px solid ${COLORS.gray[300]};
-  border-top:4px solid ${COLORS.gray[900]};
+  border-top: 4px solid ${COLORS.gray[900]};
+  overflow: auto;
 
-  @media ${QUERIES.TabletAndSmaller}{
-    justify-content:space-between ;
-    align-items:center;
+  @media ${QUERIES.TabletAndSmaller} {
+    justify-content: space-between;
+    align-items: center;
   }
-  @media ${QUERIES.phoneAndSmaller}{
-   padding-left:16px;
-   padding-right:16px;
-}
+  @media ${QUERIES.phoneAndSmaller} {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 `;
 
 const Nav = styled.nav`
   display: flex;
-  gap: 48px;
+  gap: clamp(1rem, 8.8vw - 4rem, 3rem);
   margin: 0px 48px;
 
-  @media ${QUERIES.TabletAndSmaller}{
-    display:none;
+  @media ${QUERIES.TabletAndSmaller} {
+    display: none;
   }
-
 `;
 
-const MobileAction=styled.div`
- display:none;
- 
- @media ${QUERIES.TabletAndSmaller}{
-   display:flex;
-   gap:32px;
- }
- @media ${QUERIES.phoneAndSmaller}{
-   gap:16px;
- }
-`
+const MobileAction = styled.div`
+  display: none;
+
+  @media ${QUERIES.TabletAndSmaller} {
+    display: flex;
+    gap: 32px;
+  }
+  @media ${QUERIES.phoneAndSmaller} {
+    gap: 16px;
+  }
+`;
 
 const LogoWrapper = styled.div`
   flex: 1;
@@ -100,12 +100,11 @@ const LogoWrapper = styled.div`
   }
 `;
 const Filler = styled.div`
- flex:1;
+  flex: 1;
 
- @media ${QUERIES.TabletAndSmaller}{
-   display: none;
- }
-
+  @media ${QUERIES.TabletAndSmaller} {
+    display: none;
+  }
 `;
 
 const NavLink = styled.a`
@@ -118,9 +117,6 @@ const NavLink = styled.a`
   &:first-of-type {
     color: ${COLORS.secondary};
   }
-  
 `;
-
-
 
 export default Header;

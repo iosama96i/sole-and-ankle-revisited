@@ -14,10 +14,8 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
     <Overlay isOpen={isOpen} onDismiss={onDismiss}>
       <Content>
         <CloseButton onClick={onDismiss}>
-        <Icon id={"close"}></Icon>
-        <VisuallyHidden>
-        Dissmiss menu
-        </VisuallyHidden>
+          <Icon id={"close"}></Icon>
+          <VisuallyHidden>Dissmiss menu</VisuallyHidden>
         </CloseButton>
         <Filler />
         <Nav>
@@ -78,8 +76,8 @@ const NavLink = styled.a`
 
 const CloseButton = styled(UnstyledButton)`
   position: absolute;
-  top:32px;
-  right:22px;
+  top: 26px;
+  right: 16px;
 `;
 
 const Footer = styled.footer`
